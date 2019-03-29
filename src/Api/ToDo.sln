@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_styleCop", "_styleCop", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Application", "ToDo.Application\ToDo.Application.csproj", "{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Infrastructure.InMemoryDatabase", "ToDo.Infrastructure.InMemoryDatabase\ToDo.Infrastructure.InMemoryDatabase.csproj", "{947A6F55-7F28-4DC5-AFF5-245112C7D74A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

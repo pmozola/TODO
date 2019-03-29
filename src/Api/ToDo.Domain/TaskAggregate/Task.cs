@@ -14,7 +14,7 @@ namespace ToDo.Domain.TaskAggregate
                 throw new TaskTitleDomainException("Task should have a title");
             }
 
-            this.Id = Guid.NewGuid();
+            base.Id = Guid.NewGuid();
             this.Title = title;
         }
 
@@ -23,8 +23,6 @@ namespace ToDo.Domain.TaskAggregate
         {
             this.Description = description;
         }
-
-        public Guid Id { get; }
 
         public string Title { get; }
 
