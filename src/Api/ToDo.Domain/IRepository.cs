@@ -11,5 +11,7 @@ namespace ToDo.Domain
         Task Save(T aggregate);
 
         Task<T> Get(Guid id);
+
+        Task Update(T task);
     }
 }
