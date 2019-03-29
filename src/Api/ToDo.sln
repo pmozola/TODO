@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Domain", "ToDo.Domain\ToDo.Domain.csproj", "{7308FE0C-7A96-4D83-A62C-F54FEA40B678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Domain", "ToDo.Domain\ToDo.Domain.csproj", "{7308FE0C-7A96-4D83-A62C-F54FEA40B678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Domain.Tests", "ToDo.Domain.Tests\ToDo.Domain.Tests.csproj", "{D994B4F7-747B-4CBB-A38C-84B408F253CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Domain.Tests", "ToDo.Domain.Tests\ToDo.Domain.Tests.csproj", "{D994B4F7-747B-4CBB-A38C-84B408F253CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_styleCop", "_styleCop", "{437029A6-9A08-47DE-B330-5F824121B812}"
 	ProjectSection(SolutionItems) = preProject
 		_styleCop\StyleCopRules.ruleset = _styleCop\StyleCopRules.ruleset
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Application", "ToDo.Application\ToDo.Application.csproj", "{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{D994B4F7-747B-4CBB-A38C-84B408F253CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D994B4F7-747B-4CBB-A38C-84B408F253CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D994B4F7-747B-4CBB-A38C-84B408F253CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

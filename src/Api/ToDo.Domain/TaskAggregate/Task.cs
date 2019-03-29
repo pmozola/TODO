@@ -1,10 +1,11 @@
 ﻿using System;
 
+using ToDo.Domain.BaseObject;
 using ToDo.Domain.TaskAggregate.Exceptions;
 
 namespace ToDo.Domain.TaskAggregate
 {
-    public class Task
+    public class Task : AggregateRoot
     {
         public Task(string title)
         {

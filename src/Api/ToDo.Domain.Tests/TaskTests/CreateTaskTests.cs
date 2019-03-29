@@ -43,7 +43,7 @@ namespace ToDo.Domain.Tests.TaskTests
         public void Task_WhenTitleIsEmpty_ShouldThrowTaskTitleDomainException()
         {
             // Assert
-            Assert.Throws<TaskTitleDomainException>(() => new Task(String.Empty));
+            Assert.Throws<TaskTitleDomainException>(() => new Task(string.Empty));
         }
     }
 }
