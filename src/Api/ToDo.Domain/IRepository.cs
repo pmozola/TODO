@@ -13,5 +13,7 @@ namespace ToDo.Domain
         Task<T> Get(Guid id);
 
         Task Update(T task);
+
+        Task Delete(Guid requestId);
     }
 }
