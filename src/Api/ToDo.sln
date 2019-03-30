@@ -12,9 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_styleCop", "_styleCop", "{
 		_styleCop\StyleCopRules.ruleset = _styleCop\StyleCopRules.ruleset
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Application", "ToDo.Application\ToDo.Application.csproj", "{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Application", "ToDo.Application\ToDo.Application.csproj", "{CE2D1EBA-A976-45FF-92DA-9C96725B90E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Infrastructure.InMemoryDatabase", "ToDo.Infrastructure.InMemoryDatabase\ToDo.Infrastructure.InMemoryDatabase.csproj", "{947A6F55-7F28-4DC5-AFF5-245112C7D74A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Infrastructure.InMemoryDatabase", "ToDo.Infrastructure.InMemoryDatabase\ToDo.Infrastructure.InMemoryDatabase.csproj", "{947A6F55-7F28-4DC5-AFF5-245112C7D74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Api", "ToDo.Api\ToDo.Api.csproj", "{0B4EE3D9-13D2-4C1A-9B10-A17E3CE67011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskApplication", "TaskApplication", "{978D4A1A-CE00-493B-B2BB-9E86FCF5EDD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{84FCC595-08C2-4480-A5D4-83F2148EDB53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +44,19 @@ Global
 		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947A6F55-7F28-4DC5-AFF5-245112C7D74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4EE3D9-13D2-4C1A-9B10-A17E3CE67011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4EE3D9-13D2-4C1A-9B10-A17E3CE67011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4EE3D9-13D2-4C1A-9B10-A17E3CE67011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4EE3D9-13D2-4C1A-9B10-A17E3CE67011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7308FE0C-7A96-4D83-A62C-F54FEA40B678} = {978D4A1A-CE00-493B-B2BB-9E86FCF5EDD5}
+		{D994B4F7-747B-4CBB-A38C-84B408F253CA} = {978D4A1A-CE00-493B-B2BB-9E86FCF5EDD5}
+		{CE2D1EBA-A976-45FF-92DA-9C96725B90E2} = {978D4A1A-CE00-493B-B2BB-9E86FCF5EDD5}
+		{947A6F55-7F28-4DC5-AFF5-245112C7D74A} = {84FCC595-08C2-4480-A5D4-83F2148EDB53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C8B8CE0-E252-454C-A55E-ACF344F75E8A}
