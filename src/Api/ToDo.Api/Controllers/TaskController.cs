@@ -1,5 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Threading.Tasks;
+
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
+using ToDo.Application.CommandHandlers;
+using ToDo.Application.QueryHandles;
 
 namespace ToDo.Api.Controllers
 {
@@ -7,36 +13,36 @@ namespace ToDo.Api.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
-        // GET api/values
+        private readonly IMediator mediator;
+
+        public TaskController(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var result = await this.mediator.Send(new GetTasksQuery());
+
+            if (result.Any())
+            {
+                return this.Ok(result);
+            }
+
+            return this.NoContent();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] CreateNewTaskCommand command)
         {
+            return this.Ok(await this.mediator.Send(command));
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(Guid id)
         {
+            return this.Ok(await this.mediator.Send(new DeleteTaskCommand(id)));
         }
     }
 }

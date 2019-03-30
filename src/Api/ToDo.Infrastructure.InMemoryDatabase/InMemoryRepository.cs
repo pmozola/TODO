@@ -8,7 +8,7 @@ using ToDo.Domain.BaseObject;
 
 namespace ToDo.Infrastructure.InMemoryDatabase
 {
-    public class InMemoryRepository<T> : IRepository<T>
+    public class InMemoryRepository<T> : IRepository<T>, IReadOnlyRepository<T>
         where T : AggregateRoot
     {
 
@@ -35,6 +35,14 @@ namespace ToDo.Infrastructure.InMemoryDatabase
             lock (SyncObject)
             {
                 return Task.FromResult(this.fakeDatabase.Single(x => x.Id == id));
+            }
+        }
+
+        public Task<T[]> GetAll()
+        {
+            lock (SyncObject)
+            {
+                return Task.FromResult(this.fakeDatabase.ToArray());
             }
         }
 
