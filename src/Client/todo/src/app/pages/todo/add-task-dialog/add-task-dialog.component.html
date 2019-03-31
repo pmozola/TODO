@@ -1,3 +1,11 @@
-<p>
-  add-task-dialog works!
-</p>
+<h1 mat-dialog-title>New Task</h1>
+<div mat-dialog-content>
+  <form [formGroup]="taskForm">
+      <input type="text" placeholder="Title" matInput formControlName="title" >
+      <input type="text" placeholder="Description" matInput formControlName="description" >
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSubmit()" [disabled]="!taskForm.valid" tabindex="2">Add</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+</div>

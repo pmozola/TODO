@@ -32,6 +32,15 @@ namespace ToDo.Api
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // net core 2.2 issue https://github.com/aspnet/AspNetCore/issues/6166
+            app.Use(async (ctx, next) =>
+            {
+                await next();
+                if (ctx.Response.StatusCode == 204)
+                {
+                    ctx.Response.ContentLength = 0;
+                }
+            });
             app.UseCors(builder => builder.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:4200").AllowCredentials());
             app.UseSwagger();
             app.UseSwaggerUI(c =>
