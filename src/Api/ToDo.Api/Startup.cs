@@ -19,6 +19,7 @@ namespace ToDo.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.RegisterTaskModule();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -31,6 +32,7 @@ namespace ToDo.Api
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(builder => builder.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:4200").AllowCredentials());
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
