@@ -9,6 +9,7 @@ import { AddTaskDialogComponent } from './pages/todo/add-task-dialog/add-task-di
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskTypeAsyncPipe } from 'src/pipes/Tasks/task-type-filter.pipe';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { TaskTypeAsyncPipe } from 'src/pipes/Tasks/task-type-filter.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DragDropModule
+
   ],
   providers: [],
   entryComponents: [

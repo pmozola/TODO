@@ -1,14 +1,31 @@
 <button mat-button (click)="openAddTaskDialog()">Add Task</button>
-  <div>
-    <h2>To Do</h2>
-    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 0 | async">{{ abc?.title  }}, {{abc?.id}}
+
+<div>
+  <h2>To Do</h2>
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="toDoTasks"
+    [cdkDropListConnectedTo]="[inProgressList, doneList]" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let task of toDoTasks" cdkDrag>
+      title: {{task.title}}, description: {{task.description}}
+    </div>
   </div>
-  <div>
-    <h2>In Progress</h2>
-    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 1 | async">{{ abc?.title  }}, {{abc?.id}}
+</div>
+
+<div>
+  <h2>In Progress</h2>
+  <div cdkDropList #inProgressList="cdkDropList" [cdkDropListData]="inProgressTasks"
+    [cdkDropListConnectedTo]="[todoList, doneList]" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let task of inProgressTasks" cdkDrag>
+      title: {{task.title}}, description: {{task.description}}
+    </div>
   </div>
-  <div>
-    <h2>Done</h2>
-    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 2 | async">{{ abc?.title  }}, {{abc?.id}}
+</div>
+
+<div>
+  <h2>Done</h2>
+  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="doneTasks"
+    [cdkDropListConnectedTo]="[inProgressList, todoList]" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let task of doneTasks" cdkDrag>
+      title: {{task.title}}, description: {{task.description}}
+    </div>
   </div>
 </div>
