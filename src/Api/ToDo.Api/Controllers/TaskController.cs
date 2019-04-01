@@ -44,5 +44,11 @@ namespace ToDo.Api.Controllers
         {
             return this.Ok(await this.mediator.Send(new DeleteTaskCommand(id)));
         }
+
+        [HttpPost("{id}")]
+        public async Task<ActionResult> ChangeStatus(Guid id, [FromBody] int status)
+        {
+            return this.Ok(await this.mediator.Send(new ChangeTaskStatusCommand(id, status)));
+        }
     }
 }

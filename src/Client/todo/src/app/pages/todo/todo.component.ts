@@ -44,10 +44,16 @@ export class TodoComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+      const task = <ITask><unknown>event.previousContainer.data[event.previousIndex];
+      this.taskService.changeStatus(task.id, +event.container.id).subscribe(
+        _ => {
+          task.statusId = +event.container.id;
+          transferArrayItem(event.previousContainer.data,
+            event.container.data,
+            event.previousIndex,
+            event.currentIndex);
+        }
+      );
     }
   }
 }
