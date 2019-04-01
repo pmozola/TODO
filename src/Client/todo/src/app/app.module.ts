@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatCheckboxModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoComponent } from './pages/todo/todo.component';
 import { AddTaskDialogComponent } from './pages/todo/add-task-dialog/add-task-dialog.component';
@@ -12,13 +12,15 @@ import { TaskTypeAsyncPipe } from 'src/pipes/Tasks/task-type-filter.pipe';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ErrorsHandler } from './handlers/errors-handler';
 import { ToastrModule } from 'ngx-toastr';
+import { TaskCardComponent } from './pages/todo/task-card/task-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskDialogComponent,
     TodoComponent,
-    TaskTypeAsyncPipe
+    TaskTypeAsyncPipe,
+    TaskCardComponent
   ],
   imports: [
     AppRoutingModule,
@@ -29,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule,
     DragDropModule,
     ToastrModule.forRoot({
       timeOut: 5000,
