@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using ToDo.Api.Middlewares;
 using ToDo.Application.IoC;
 
 namespace ToDo.Api
@@ -41,12 +42,16 @@ namespace ToDo.Api
                     ctx.Response.ContentLength = 0;
                 }
             });
+
             app.UseCors(builder => builder.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:4200").AllowCredentials());
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API V1");
             });
+
+            app.UseExceptionMiddleware();
 
             app.UseMvc();
         }
