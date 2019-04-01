@@ -1,6 +1,6 @@
 export interface ITask {
-    id: string;
+    id: number;
     title: string;
     description: string;
-    statusId : string
+    statusId: number;
   }

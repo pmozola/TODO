@@ -8,12 +8,14 @@ import { TodoComponent } from './pages/todo/todo.component';
 import { AddTaskDialogComponent } from './pages/todo/add-task-dialog/add-task-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TaskTypeAsyncPipe } from 'src/pipes/Tasks/task-type-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskDialogComponent,
-    TodoComponent
+    TodoComponent,
+    TaskTypeAsyncPipe
   ],
   imports: [
     AppRoutingModule,

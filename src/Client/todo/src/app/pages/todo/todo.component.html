@@ -1,2 +1,14 @@
 <button mat-button (click)="openAddTaskDialog()">Add Task</button>
-<div *ngFor="let abc of tasks | async">{{ abc?.title }}</div>
+  <div>
+    <h2>To Do</h2>
+    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 0 | async">{{ abc?.title  }}, {{abc?.id}}
+  </div>
+  <div>
+    <h2>In Progress</h2>
+    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 1 | async">{{ abc?.title  }}, {{abc?.id}}
+  </div>
+  <div>
+    <h2>Done</h2>
+    <div *ngFor="let abc of tasks | taskTypeAsyncPipe : 2 | async">{{ abc?.title  }}, {{abc?.id}}
+  </div>
+</div>

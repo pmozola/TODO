@@ -12,7 +12,7 @@ import { AddTaskDialogComponent } from './add-task-dialog/add-task-dialog.compon
 })
 export class TodoComponent implements OnInit {
   tasks: Observable<ITask[]>;
-  constructor(private taskService:TaskService, public dialog: MatDialog) { }
+  constructor(private taskService: TaskService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getTasks();
