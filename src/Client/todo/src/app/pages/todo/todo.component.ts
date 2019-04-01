@@ -40,6 +40,18 @@ export class TodoComponent implements OnInit {
     });
   }
 
+  deleteTask(task: ITask) {
+    this.toDoTasks.forEach((item, index) => {
+      if (item === task) this.toDoTasks.splice(index, 1);
+    });
+    this.inProgressTasks.forEach((item, index) => {
+      if (item === task) this.inProgressTasks.splice(index, 1);
+    });
+    this.doneTasks.forEach((item, index) => {
+      if (item === task) this.doneTasks.splice(index, 1);
+    });
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

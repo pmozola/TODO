@@ -30,4 +30,10 @@ export class TaskService {
 
     return this.httpClient.post<any>(url, statusId);
   }
+
+  delete(id: string){
+    const url = this.baseUrl + 'task/' + id;
+
+    return this.httpClient.delete<any>(url);
+  }
 }

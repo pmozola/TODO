@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITask } from 'src/app/models/task.view-model';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-task-card',
@@ -8,9 +9,13 @@ import { ITask } from 'src/app/models/task.view-model';
 })
 export class TaskCardComponent implements OnInit {
   @Input() task: ITask;
-  constructor() { }
+  @Output() onTaskDelete = new EventEmitter<ITask>();
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
 
+  delete() {
+    this.taskService.delete(this.task.id).subscribe(_ => this.onTaskDelete.emit(this.task))
+  }
 }

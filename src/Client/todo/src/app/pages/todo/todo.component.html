@@ -5,7 +5,7 @@
     <div cdkDropList id='0' #todoList="cdkDropList" [cdkDropListData]="toDoTasks"
       [cdkDropListConnectedTo]="[inProgressList, doneList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of toDoTasks" cdkDrag>
-        <app-task-card [task]='task'></app-task-card>
+        <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div cdkDropList id='1' #inProgressList="cdkDropList" [cdkDropListData]="inProgressTasks"
       [cdkDropListConnectedTo]="[todoList, doneList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of inProgressTasks" cdkDrag>
-        <app-task-card [task]='task'></app-task-card>
+        <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
     <div cdkDropList id='2' #doneList="cdkDropList" [cdkDropListData]="doneTasks"
       [cdkDropListConnectedTo]="[inProgressList, todoList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of doneTasks" cdkDrag>
-        <app-task-card [task]='task'></app-task-card>
+        <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
       </div>
     </div>
   </div>
