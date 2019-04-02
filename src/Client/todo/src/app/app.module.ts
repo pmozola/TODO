@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoComponent } from './pages/todo/todo.component';
 import { AddTaskDialogComponent } from './pages/todo/add-task-dialog/add-task-dialog.component';
@@ -32,6 +32,10 @@ import { TaskCardComponent } from './pages/todo/task-card/task-card.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
     DragDropModule,
     ToastrModule.forRoot({
       timeOut: 5000,
