@@ -1,6 +1,28 @@
 .flex-grid {
   display: flex;
+  flex-flow: row wrap;
+  margin: -10px;
+  padding: 10px;
 }
 .col {
-  flex: 1;
+  flex: 0 0 30%;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+
+  background: #fff176;
+}
+
+
+.drag-drop-list {
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.drop-down-item{
+  padding: 10px;
+}
+
+h2.center-text {
+  text-align: center;
 }

@@ -1,8 +1,8 @@
-<button mat-button (click)="openAddTaskDialog()">Add Task</button>
+<button mat-raised-button (click)="openAddTaskDialog()">Add New Task</button>
 <div class="flex-grid">
   <div class="col">
-    <h2>To Do</h2>
-    <div cdkDropList id='0' #todoList="cdkDropList" [cdkDropListData]="toDoTasks"
+    <h2 class="center-text">To Do</h2>
+    <div cdkDropList id='0' class="drag-drop-list" #todoList="cdkDropList" [cdkDropListData]="toDoTasks"
       [cdkDropListConnectedTo]="[inProgressList, doneList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of toDoTasks" cdkDrag>
         <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
@@ -11,8 +11,8 @@
   </div>
 
   <div class="col">
-    <h2>In Progress</h2>
-    <div cdkDropList id='1' #inProgressList="cdkDropList" [cdkDropListData]="inProgressTasks"
+    <h2 class="center-text">In Progress</h2>
+    <div cdkDropList id='1' class="drag-drop-list" #inProgressList="cdkDropList" [cdkDropListData]="inProgressTasks"
       [cdkDropListConnectedTo]="[todoList, doneList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of inProgressTasks" cdkDrag>
         <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
@@ -21,8 +21,8 @@
   </div>
 
   <div class="col">
-    <h2>Done</h2>
-    <div cdkDropList id='2' #doneList="cdkDropList" [cdkDropListData]="doneTasks"
+    <h2 class="center-text">Done</h2>
+    <div cdkDropList id='2' class="drag-drop-list" #doneList="cdkDropList" [cdkDropListData]="doneTasks"
       [cdkDropListConnectedTo]="[inProgressList, todoList]" (cdkDropListDropped)="drop($event)">
       <div *ngFor="let task of doneTasks" cdkDrag>
         <app-task-card [task]='task' (onTaskDelete)="deleteTask($event)"></app-task-card>
