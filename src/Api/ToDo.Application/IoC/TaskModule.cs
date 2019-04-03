@@ -27,18 +27,19 @@ namespace ToDo.Application.IoC
 
         private static InMemoryRepository<Task> PrepareFakeDatabase()
         {
+            // some fake initial data
             var taskDatabase = new InMemoryRepository<Task>();
 
-            var task1 = new Task("task1", "description1");
+            var task1 = new Task("Go to shopping", "Buy eggs, fruits, milk, chocolate, some vegetables and things to clean the windows");
             task1.ChangeStatus(TaskStatus.Finished);
-            var task2 = new Task("task2");
+            var task2 = new Task("Read Innovator Dilemma book", "link to amazon sdsdsdsdsdsdsdsdsdsdsdsdsd");
             task2.ChangeStatus(TaskStatus.InProgress);
-            var task3 = new Task("task3", "description3");
+            var task3 = new Task("Very important task", "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ");
             task3.ChangeStatus(TaskStatus.InProgress);
             var task4 = new Task("task4");
             task4.ChangeStatus(TaskStatus.Finished);
 
-            taskDatabase.Save(new Task("task5"));
+            taskDatabase.Save(new Task("Some other task", "ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptate"));
             taskDatabase.Save(new Task("task6"));
             taskDatabase.Save(task1);
             taskDatabase.Save(task2);
