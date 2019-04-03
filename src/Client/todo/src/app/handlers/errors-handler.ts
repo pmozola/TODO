@@ -24,7 +24,10 @@ export class ErrorsHandler implements ErrorHandler {
       if (environment.production === true) {
         message = `Sorry but error occurees : ${error.error.message}`;
       } else {
-        message = `${error.error.message}`;
+        if (error.error.message)   {
+          message = `${error.error.message}`;
+        }
+        message = 'Unknow error happend. Please try later';
       }
 
       this.toastrService.error(message, null, { onActivateTick: true });

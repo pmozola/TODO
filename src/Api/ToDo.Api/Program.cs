@@ -12,7 +12,7 @@ namespace ToDo.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://*:4201");
+                .UseUrls("http://0.0.0.0:4201")
+                .UseStartup<Startup>();
     }
 }
